@@ -4,10 +4,9 @@ import { CORE_CONCEPTS } from "./data";
 import TabButton from "./components/TabButton/TabButton";
 
 function App() {
-
   const handleSelect = () => {
-    console.log("Select workds!")
-  }
+    console.log("Select workds!");
+  };
 
   return (
     <div>
@@ -21,11 +20,7 @@ function App() {
               title={CORE_CONCEPTS[0].title}
               description={CORE_CONCEPTS[0].description}
             />
-            <CoreConcept
-              image={CORE_CONCEPTS[1].image}
-              title={CORE_CONCEPTS[1].title}
-              description={CORE_CONCEPTS[1].description}
-            />
+            <CoreConcept {...CORE_CONCEPTS[1]} />
             <CoreConcept {...CORE_CONCEPTS[2]} />
             <CoreConcept {...CORE_CONCEPTS[3]} />
           </ul>
