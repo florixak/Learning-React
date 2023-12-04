@@ -1,7 +1,12 @@
 const TabButton = ({ children }) => {
+
+  const handleClick = () => {
+    console.log("Click workds!")
+  }
+
   return (
     <li>
-      <button>{children}</button>
+      <button onClick={handleClick}>{children}</button>
     </li>
   );
 };
