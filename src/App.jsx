@@ -4,8 +4,9 @@ import { CORE_CONCEPTS } from "./data";
 import TabButton from "./components/TabButton/TabButton";
 
 function App() {
-  const handleSelect = () => {
-    console.log("Select workds!");
+  const handleSelect = (selectedButton) => {
+    // selectedSTring => 'components', 'jsx', 'props', 'state'
+    console.log(selectedButton);
   };
 
   return (
@@ -23,16 +24,23 @@ function App() {
             <CoreConcept {...CORE_CONCEPTS[1]} />
             <CoreConcept {...CORE_CONCEPTS[2]} />
             <CoreConcept {...CORE_CONCEPTS[3]} />
+
+            {/*CORE_CONCEPTS.map((item, index) => {
+              return (
+                <CoreConcept {...CORE_CONCEPTS[index]} />
+              )
+            })*/}
           </ul>
         </section>
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onSelect={handleSelect}>Components</TabButton>
-            <TabButton onSelect={handleSelect}>JSX</TabButton>
-            <TabButton onSelect={handleSelect}>Props</TabButton>
-            <TabButton onSelect={handleSelect}>State</TabButton>
+            <TabButton onSelect={() => handleSelect("components")}>Components</TabButton>
+            <TabButton onSelect={() => handleSelect("jsx")}>JSX</TabButton>
+            <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
+            <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
+
         </section>
       </main>
     </div>
