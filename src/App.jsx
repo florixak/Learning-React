@@ -6,12 +6,11 @@ import { CORE_CONCEPTS } from "./data";
 import TabButton from "./components/TabButton/TabButton";
 
 function App() {
-
-  const { selectedTab, setSelectedTab } = useState("Please click on button!");  
+  const { selectedTab, setSelectedTab } = useState("Please click on button!");
 
   const handleSelect = (selectedButton) => {
     // selectedSTring => 'components', 'jsx', 'props', 'state'
-    setSelectedTab(selectedButton)
+    setSelectedTab(selectedButton);
     console.log(selectedTab);
   };
 
@@ -41,9 +40,7 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onSelect={() => handleSelect("components")}>
-              Components
-            </TabButton>
+            <TabButton onSelect={() => handleSelect("components")}>Components</TabButton>
             <TabButton onSelect={() => handleSelect("jsx")}>JSX</TabButton>
             <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
             <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
