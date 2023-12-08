@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from "react";
 
 import Header from "./components/Header/Header";
 import CoreConcept from "./components/CoreConcept/CoreConcept";
@@ -6,12 +6,11 @@ import { CORE_CONCEPTS } from "./data";
 import TabButton from "./components/TabButton/TabButton";
 
 function App() {
-
-  const [ selectedTopic, setSelectedTopic ] = useState('Click the button!');
+  const [selectedTopic, setSelectedTopic] = useState("Click the button!");
 
   const handleSelect = (selectedButton) => {
     // selectedSTring => 'components', 'jsx', 'props', 'state'
-    setSelectedTopic(selectedButton)
+    setSelectedTopic(selectedButton);
     //console.log(selectedTopic);
   };
 
@@ -41,7 +40,9 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onSelect={() => handleSelect("components")}>Components</TabButton>
+            <TabButton onSelect={() => handleSelect("components")}>
+              Components
+            </TabButton>
             <TabButton onSelect={() => handleSelect("jsx")}>JSX</TabButton>
             <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
             <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
