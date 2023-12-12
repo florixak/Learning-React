@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./Examples.css";
-
 import TabButton from "../TabButton/TabButton";
 import { EXAMPLES } from "../../data";
 
@@ -8,9 +7,7 @@ const Examples = () => {
   const [selectedTopic, setSelectedTopic] = useState("");
 
   const handleSelect = (selectedButton) => {
-    // selectedSTring => 'components', 'jsx', 'props', 'state'
     setSelectedTopic(selectedButton);
-    console.log(selectedTopic);
   };
 
   let tabContent = <p>Please select a topic.</p>;
