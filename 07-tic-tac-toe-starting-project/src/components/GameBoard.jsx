@@ -9,6 +9,10 @@ const GameBoard = ({ onSelectSquare, turns }) => {
 
   let gameBoard = initialGameBoard;
 
+  for (const turn of turns) {
+    
+  }
+
   /*const [gameBoard, setGameBoard] = useState(initialGameBoard);
 
   function handleSelectSquare(rowIndex, colIndex) {
