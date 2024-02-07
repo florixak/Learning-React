@@ -2,6 +2,7 @@ import { useState } from "react";
 import { styled } from "styled-components";
 
 import Button from "./Button";
+import Input from "./Input";
 
 const StyledContainer = styled.div`
   display: flex;
@@ -9,8 +10,6 @@ const StyledContainer = styled.div`
   gap: 0.5rem;
   margin-bottom: 1.5rem;
 `;
-
-
 
 export default function AuthInputs() {
   const [enteredEmail, setEnteredEmail] = useState("");
@@ -35,35 +34,29 @@ export default function AuthInputs() {
   return (
     <div id="auth-inputs">
       <StyledContainer>
-        <p className="paragraph">
-          <Label $invalid={emailNotValid}>Email</Label>
-          <Input
-            $invalid={emailNotValid}
-            type="email"
-            style={{
-              backgroundColor: emailNotValid ? "#fed2d2" : "d1d5db",
-            }}
-            onChange={(event) => handleInputChange("email", event.target.value)}
-          />
-        </p>
-        <p>
-          <Label $invalid={passwordNotValid}>Password</Label>
-          <Input
-            $invalid={passwordNotValid}
-            type="password"
-            onChange={(event) =>
-              handleInputChange("password", event.target.value)
-            }
-          />
-        </p>
+        <Input
+          label="Email"
+          invalid={emailNotValid}
+          type="email"
+          style={{
+            backgroundColor: emailNotValid ? "#fed2d2" : "d1d5db",
+          }}
+          onChange={(event) => handleInputChange("email", event.target.value)}
+        />
+        <Input
+          label="Password"
+          invalid={passwordNotValid}
+          type="password"
+          onChange={(event) =>
+            handleInputChange("password", event.target.value)
+          }
+        />
       </StyledContainer>
       <div className="actions">
         <button type="button" className="text-button">
           Create a new account
         </button>
-        <Button onClick={handleLogin}>
-          Sign In
-        </Button>
+        <Button onClick={handleLogin}>Sign In</Button>
       </div>
     </div>
   );
