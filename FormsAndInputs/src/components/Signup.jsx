@@ -1,4 +1,8 @@
+import { useState } from "react";
+
 export default function Signup() {
+  const [passwordAreNotEqual, setPasswordAreNotEqual] = useState(false);
+
   function handleSubmit(event) {
     event.preventDefault();
 
@@ -6,6 +10,12 @@ export default function Signup() {
     const acquisitionsChannel = fd.getAll("acquisition");
     const data = Object.fromEntries(fd.entries());
     data.acquisition = acquisitionsChannel;
+
+    if (data.password !== data["confirm-password"]) {
+      setPasswordAreNotEqual(true);
+      return;
+    }
+
     console.log(data);
   }
 
@@ -40,6 +50,9 @@ export default function Signup() {
             required
             minLength={6}
           />
+          <div className="control-error">
+            {passwordAreNotEqual && <p>Passwords must match.</p>}
+          </div>
         </div>
       </div>
 
@@ -98,8 +111,13 @@ export default function Signup() {
 
       <div className="control">
         <label htmlFor="terms-and-conditions">
-          <input type="checkbox" id="terms-and-conditions" name="terms" required />I
-          agree to the terms and conditions
+          <input
+            type="checkbox"
+            id="terms-and-conditions"
+            name="terms"
+            required
+          />
+          I agree to the terms and conditions
         </label>
       </div>
 
