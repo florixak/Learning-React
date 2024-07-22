@@ -28,7 +28,7 @@ export default function MealList() {
   }
 
   if (error) {
-    return <p>Error occured...</p>;
+    return <p>{error.message}</p>;
   }
 
   return (
